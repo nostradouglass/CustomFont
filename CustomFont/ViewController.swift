@@ -10,11 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var text: UITextView!
+    @IBOutlet weak var button: UIButton!
+    
+    var fontSwitch = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        button.layer.cornerRadius = 50
+        text.font = UIFont(name: "Arial", size: 20.0)
     }
 
+    
+    @IBAction func changeFont(_ sender: Any) {
+        if fontSwitch == true {
+        text.font = UIFont(name: "Didot", size: 30.0)
+            fontSwitch = false
+        } else {
+            text.font = UIFont(name: "Helvetica", size: 30.0)
+            fontSwitch = true
+        }
+    }
+    
 
 }
 
